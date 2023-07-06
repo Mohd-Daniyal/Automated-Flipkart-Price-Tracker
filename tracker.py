@@ -3,9 +3,9 @@ import lxml
 import smtplib
 from bs4 import BeautifulSoup
 
-url = "https://www.flipkart.com/realme-11-pro-5g-sunrise-beige-128-gb/p/itm3f783627a36ec?pid=MOBGPUNGXUZQKTTB&param=32323&otracker=clp_bannerads_1_19.bannerAdCard.BANNERADS_xz_mobile-phones-store_YOPBIW4FYATR"
+url = "Your Wishlisted Product URL"
 header = {
-    "User-Agent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+    "User-Agent" : "Your data",
     "Accept-Language" : "en-US,en;q=0.9"
 }
 
@@ -22,9 +22,9 @@ if price_float < buy_price:
 
     with smtplib.SMTP("smtp.gmail.com", port=587 ) as connection:
         connection.starttls()
-        result=connection.login("mohddaniyal.hasan2022@vitstudent.ac.in", "lxgvpnttzbmgjsis")
+        result=connection.login("sender email", "app password")
         connection.sendmail(
-            from_addr = "mohddaniyal.hasan2022@vitstudent.ac.in",
-            to_addrs = "hassansahaab88@gmail.com",
+            from_addr = "Sender email address",
+            to_addrs = "Receiver email address",
             msg=f"Subject:Flipkart Price Alert\n\n{message}\n{url}".encode("utf-8")
         )
